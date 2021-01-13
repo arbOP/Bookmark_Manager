@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/bookmark'
 
 class BookmarkManager < Sinatra::Base
 
@@ -7,12 +8,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    bookmarks = [
-      'https://www.crunchyroll.com/',
-      'https://www.netflix.com/',
-      'https://www.youtube.com/'
-    ]
-    bookmarks.join("<br>")
+    @bookmarks = Bookmark.all
+    erb :'bookmarks/index'
   end
 
   run! if app_file == $0
