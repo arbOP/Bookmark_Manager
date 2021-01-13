@@ -8,7 +8,8 @@ end
 feature 'show books' do
   scenario 'to view all bookmarks' do
     visit('/bookmarks')
-    expect(page).to have_content "https://www.crunchyroll.com/"
-    expect(page).to have_content "https://www.netflix.com/"
+    expect(page).to have_content "http://www.makersacademy.com"
+    expect(page).to have_content "http://www.destroyallsoftware.com"
+    expect(page).to have_content "http://www.google.com"
   end
 end
